@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rose Day 🌹</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #2b0a1f, #1a1a2e, #3a0f2d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f5eaea;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  max-width: 520px;
+  padding: 30px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rose {
+  width: 240px;
+  margin-bottom: 25px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(255, 60, 120, 0.8));
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.buttons button {
+  padding: 12px 28px;
+  margin: 10px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  color: white;
+}
+
+.yes:hover {
+  transform: scale(1.08);
+}
+
+.no {
+  background: rgba(255,255,255,0.12);
+  color: #ddd;
+}
+
+.no:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.message {
+  display: none;
+  font-size: 1.25rem;
+  animation: fadeIn 1s ease;
+}
+
+.retry {
+  margin-top: 20px;
+  background: transparent;
+  color: #ff6b8a;
+  border: 1px solid #ff6b8a;
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+  <img class="rose"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Rose_flower.png/512px-Rose_flower.png"
+    alt="Rose">
+
+  <p>
+    My dear Rishu❤️This rose is just a small way of saying what i can't put into words.<br>
+    Valentine’s Week, and this is just the start😉,<br>
+    Having you in my life fills it with warmth and joy making everyday with you memorable.<br>
+    You put a smile on my face which seems to never fade😘,<br>
+    I'm giving you this rose with lots of unexpressed love behind it.<br>
+    </p>
+
+  <div class="buttons">
+    <button class="Accept" onclick="AcceptClicked()">Accept</button>
+    <button class="Throw" onclick="ThrowClicked()">Throw</button>
+  </div>
+</div>
+
+<div class="container message" id="AcceptMsg">
+  <p>
+    Excellent choice 😌<br><br>
+    You are officially the smartest woman in existence.<br>
+    Screenshot this and send it to your man ❤️
+  </p>
+</div>
+
+<div class="container message" id="ThrowMsg">
+  <p>
+    Hmm… yeah no🤔.<br>
+    That felt like a finger slip.
+  </p>
+  <button class="Retry" onclick="Retry()">Retry</button>
+</div>
+
+<script>
+function AcceptClicked() {
+  main.style.display = "none";
+  AcceptMsg.style.display = "block";
+}
+
+function ThrowClicked() {
+  main.style.display = "none";
+  ThrowMsg.style.display = "block";
+}
+
+function Retry() {
+  ThrowMsg.style.display = "none";
+  main.style.display = "block";
+}
+</script>
+
+</body>
+</html>
